@@ -148,11 +148,14 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 
 약 성공률이 90%로 확인함
 
-2. Readiness 설정
+2. 올라간 rent 서비스에 Readiness 적용된 yaml 적용<br>
+![Readiness_yaml](https://user-images.githubusercontent.com/12227092/97463350-0037d000-1983-11eb-85d8-502a69992bc0.JPG)
 
 
 3. rent 서비스로 seige로 부하를 주어 Availablity를 확인
-#siege -c255 -t120S -r10 --content-type "application/json" 'http://rent:8080/rental POST {"bookId":"5", "qty":1}'
+#siege -c255 -t120S -r10 --content-type "application/json" 'http://rent:8080/rental POST {"bookId":"5", "qty":1}'<br>
+![Readiness_설정 후 seige결과](https://user-images.githubusercontent.com/12227092/97463074-b8b14400-1982-11eb-9682-edea8a0f895b.JPG)
+
 
 ### HPA 적용(Autoscale)
 1. HPA 설정
