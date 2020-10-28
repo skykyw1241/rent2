@@ -19,7 +19,7 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: 10.0.21.169:9092
+          brokers: 10.0.108.75:9092
         streams:
           binder:
             configuration:
