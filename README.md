@@ -129,14 +129,17 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 ![CI_4_pod_deploy 생성](https://user-images.githubusercontent.com/73535272/97382403-abf30880-190e-11eb-9e01-169dfa630300.JPG)
 
 ### Liveness
-1. yaml 설정<br>
-![liveness_0_설정 yaml](https://user-images.githubusercontent.com/73535272/97382860-ab0ea680-190f-11eb-8852-64c2b77d034c.JPG)
+1. deploy.yaml 설정<br>
+![Liveness_ deploy yaml](https://user-images.githubusercontent.com/12227092/97439664-ca3a2200-1969-11eb-9260-03676374e560.JPG)
 
-2. deploy 생성<br>
-![liveness_1_yaml로 deploy 생성](https://user-images.githubusercontent.com/73535272/97382888-b792ff00-190f-11eb-91de-94049b2672b3.JPG)
+2. Liveness가 스케쥴 돌면서 재기동함을 확인<br>
+![Liveness_Restarts 확인](https://user-images.githubusercontent.com/12227092/97439856-0f5e5400-196a-11eb-848f-8f9b98575bd7.JPG)
 
-3. pod 내 오류로 인한 셧다운 처리<br>
-![liveness_2_pod내 로그_ 오류로 shutdown 처리](https://user-images.githubusercontent.com/73535272/97382933-c7124800-190f-11eb-9b4d-d091ecb87a37.JPG)
+3. rental 서비스가 동작중임을 확인<br>
+![Liveness_ 동작중](https://user-images.githubusercontent.com/12227092/97439765-f5247600-1969-11eb-8633-22103708e3dd.JPG)
+
+3. rent deploy에 대한 describe 확인<br>
+![Liveness_ describe로 확인](https://user-images.githubusercontent.com/12227092/97439959-2dc44f80-196a-11eb-8d6b-799142c4521d.JPG)
 
 ### HPA 적용(Autoscale)
 1. HPA 설정
