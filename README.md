@@ -146,7 +146,10 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 #siege -c255 -t120S -r10 --content-type "application/json" 'http://rent:8080/rental POST {"bookId":"5", "qty":1}'<br>
 ![Readiness_설정전 seige결과](https://user-images.githubusercontent.com/12227092/97448509-112d1500-1974-11eb-9217-f51688ba6dab.JPG)
 
+약 성공률이 90%로 확인함
+
 2. Readiness 설정
+
 
 3. rent 서비스로 seige로 부하를 주어 Availablity를 확인
 #siege -c255 -t120S -r10 --content-type "application/json" 'http://rent:8080/rental POST {"bookId":"5", "qty":1}'
