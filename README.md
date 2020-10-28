@@ -140,19 +140,16 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 
 ### HPA 적용(Autoscale)
 1. HPA 설정
-#kubectl autoscale deploy rent --min=1 --max=10 --cpu-percent=15
-<br>
+#kubectl autoscale deploy rent --min=1 --max=10 --cpu-percent=15<br>
 ![HPA_1_실행전 상태](https://user-images.githubusercontent.com/12227092/97423776-1d54aa80-1953-11eb-82b8-03db56590378.JPG)
 
-#kubectl get hpa rent -o yaml  로 설정 확인
-<br>
+#kubectl get hpa rent -o yaml  로 설정 확인<br>
 ![HPA_0_yaml 설정](https://user-images.githubusercontent.com/12227092/97424249-cc918180-1953-11eb-9e4a-9a66c1968f3d.JPG)
 
 2. HPA 실행<br>
-시즈 사용한 부하 발생
+시즈 사용한 부하 발생<br>
 ![HPA_2_siege 실행](https://user-images.githubusercontent.com/12227092/97423872-4412e100-1953-11eb-98b3-948b1f27bb84.JPG)
-<br>
 
 ![HPA_3_실행 후 상태](https://user-images.githubusercontent.com/12227092/97423925-5856de00-1953-11eb-931c-e3fbf6bb5b5e.JPG)
-<br>
+
 rent의 POD가 10개까지 확장되어 생성됨을 확인
