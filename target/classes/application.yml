@@ -1,0 +1,109 @@
+# 교육용 코드
+---
+spring:
+  profiles: default
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+        streams:
+          binder:
+            configuration:
+              default:
+                key:
+                  serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+                value:
+                  serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+      bindings:
+        rentSaved-in:
+          group: rental
+          destination: rental
+          contentType: application/json
+        rentSaved-out:
+          destination: rental
+          contentType: application/json
+#        bookSaved-in:
+          #          group: book
+          #destination: book
+          #contentType: application/json
+          #bookSaved-out:
+          #destination: book
+          #contentType: application/json
+        deliveryCreated-in:
+          group: delivery
+          destination: delivery
+          contentType: application/json
+        deliveryCreated-out:
+          destination: delivery
+          contentType: application/json
+        #deliveryCanceled-in:
+        #  group: delivery
+        #  destination: delivery
+        #  contentType: application/json
+        #deliveryCanceled-out:
+        #  destination: delivery
+        #  contentType: application/json
+
+#        dialect: org.hibernate.dialect.MySQL57Dialect
+#  datasource:
+#    url: jdbc:mysql://${_DATASOURCE_ADDRESS:35.221.110.118:3306}/${_DATASOURCE_TABLESPACE:my-database}
+#    username: ${_DATASOURCE_USERNAME:root}
+#    password: ${_DATASOURCE_PASSWORD:secretpassword}
+#    driverClassName: com.mysql.cj.jdbc.Driver
+logging:
+  level:
+    org.hibernate.type: trace
+    org.springframework.cloud: debug
+server:
+  port: 8082
+
+api:
+  url:
+    delivery: http://localhost:8083
+    book: http://localhost:8081
+
+#feign:
+    #  client:
+      #config:
+      #feignName: # @FeignClient에서 name 값, 전역으로 설정하려면 default
+      #  connectTimeout: 5000
+      #  readTimeout: 5000
+      #  loggerLevel: full
+      #  errorDecoder: com.example.SimpleErrorDecoder
+      #  retryer: com.example.SimpleRetryer
+      #  requestInterceptors:
+      #    - com.example.FooRequestInterceptor
+      #    - com.example.BarRequestInterceptor
+      #  decode404: false
+      #  encoder: com.example.SimpleEncoder
+      #  decoder: com.example.SimpleDecoder
+      #  contract: com.example.SimpleContract
+
+---
+spring:
+  profiles: docker
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+#        dialect: org.hibernate.dialect.MySQL57Dialect
+#  datasource:
+#    url: jdbc:mysql://${_DATASOURCE_ADDRESS:35.221.110.118:3306}/${_DATASOURCE_TABLESPACE:my-database}
+#    username: ${_DATASOURCE_USERNAME:root}
+#    password: ${_DATASOURCE_PASSWORD:secretpassword}
+#    driverClassName: com.mysql.cj.jdbc.Driver

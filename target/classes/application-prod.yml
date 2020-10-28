@@ -1,0 +1,51 @@
+
+api:
+  url:
+    delivery: http://10.0.47.131:8080
+    book: http://10.0.47.131:8080
+
+spring:
+  profiles: docker
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 10.0.21.169:9092
+        streams:
+          binder:
+            configuration:
+              default:
+                key:
+                  serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+                value:
+                  serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+      bindings:
+        rentSaved-in:
+          group: rental
+          destination: rental
+          contentType: application/json
+        rentSaved-out:
+          destination: rental
+          contentType: application/json
+        deliveryCreated-in:
+          group: delivery
+          destination: delivery
+          contentType: application/json
+        deliveryCreated-out:
+          destination: delivery
+          contentType: application/json
+logging:
+  level:
+    org.hibernate.type: trace
+    org.springframework.cloud: debug
+server:
+  port: 8080

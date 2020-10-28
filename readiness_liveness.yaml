@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rent
+  labels:
+    app: rent
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rent
+  template:
+    metadata:
+      labels:
+        app: rent
+    spec:
+      containers:
+        - name: rent
+          image: team03acr.azurecr.io/products:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 5
+            timeoutSeconds: 2
+            periodSeconds: 10
+            failureThreshold: 1
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+            initialDelaySeconds: 15
+            timeoutSeconds: 2
+            periodSeconds: 20
+            failureThreshold: 1
