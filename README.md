@@ -153,3 +153,22 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 ![HPA_3_실행 후 상태](https://user-images.githubusercontent.com/12227092/97423925-5856de00-1953-11eb-931c-e3fbf6bb5b5e.JPG)
 
 rent의 POD가 10개까지 확장되어 생성됨을 확인
+
+### Config Map 적용
+1. Config Map 설정<br>
+configMap.yaml으로 설정<br>
+![configMap_yaml](https://user-images.githubusercontent.com/12227092/97428391-44ae7600-1959-11eb-8f76-9b03920a75e6.JPG)
+
+#kubectl create -f configMap.yaml  -> configMap 생성<br>
+#kubectl describe configmap superuser -> 추가한 configMap 정보 조회<br>
+![configMap 설정](https://user-images.githubusercontent.com/12227092/97428626-9820c400-1959-11eb-806b-809b01044a84.JPG)
+
+2. config Map 적용<br>
+deploy.yaml에 해당 config Map 설정<br>
+![ConfigMap_ deploy yaml](https://user-images.githubusercontent.com/12227092/97428733-c4d4db80-1959-11eb-942d-3848a7eb1fee.JPG)
+
+application.yaml에 아래의 config Map 설정<br>
+![ConfigMap_ application yaml](https://user-images.githubusercontent.com/12227092/97428874-f352b680-1959-11eb-8147-61d5bd1be8ee.JPG)
+
+java단에 해당 config Map 적용<br>
+![ConfigMap RentalController](https://user-images.githubusercontent.com/12227092/97428917-09607700-195a-11eb-9677-413c6e3d303e.JPG)
