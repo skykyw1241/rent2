@@ -141,6 +141,16 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 3. rent deploy에 대한 describe 확인<br>
 ![Liveness_ describe로 확인](https://user-images.githubusercontent.com/12227092/97439959-2dc44f80-196a-11eb-8d6b-799142c4521d.JPG)
 
+### Readiness
+1. rent 서비스로 seige로 부하를 주어 Availablity를 확인
+#siege -c255 -t120S -r10 --content-type "application/json" 'http://rent:8080/rental POST {"bookId":"5", "qty":1}'<br>
+![Readiness_설정전 seige결과](https://user-images.githubusercontent.com/12227092/97448509-112d1500-1974-11eb-9217-f51688ba6dab.JPG)
+
+2. Readiness 설정
+
+3. rent 서비스로 seige로 부하를 주어 Availablity를 확인
+#siege -c255 -t120S -r10 --content-type "application/json" 'http://rent:8080/rental POST {"bookId":"5", "qty":1}'
+
 ### HPA 적용(Autoscale)
 1. HPA 설정
 #kubectl autoscale deploy rent --min=1 --max=10 --cpu-percent=15<br>
