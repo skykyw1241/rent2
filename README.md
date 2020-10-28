@@ -143,7 +143,7 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 #kubectl autoscale deploy rent --min=1 --max=10 --cpu-percent=15
 <br>
 ![HPA_1_실행전 상태](https://user-images.githubusercontent.com/12227092/97423776-1d54aa80-1953-11eb-82b8-03db56590378.JPG)
-<br>
+
 #kubectl get hpa rent -o yaml  로 설정 확인
 <br>
 ![HPA_0_yaml 설정](https://user-images.githubusercontent.com/12227092/97424249-cc918180-1953-11eb-9e4a-9a66c1968f3d.JPG)
