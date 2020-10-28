@@ -139,16 +139,20 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 ![liveness_2_pod내 로그_ 오류로 shutdown 처리](https://user-images.githubusercontent.com/73535272/97382933-c7124800-190f-11eb-9b4d-d091ecb87a37.JPG)
 
 ### HPA 적용(Autoscale)
-1. HPA 속성 지정<br>
-![HPA_kubectl get all_replica 속성 지정](https://user-images.githubusercontent.com/73535272/97378949-f53f5a00-1906-11eb-9be7-d64f83c6e082.JPG)
+1. HPA 설정
+#kubectl autoscale deploy rent --min=1 --max=10 --cpu-percent=15
 <br>
+![HPA_1_실행전 상태](https://user-images.githubusercontent.com/12227092/97423776-1d54aa80-1953-11eb-82b8-03db56590378.JPG)
+<br>
+#kubectl get hpa rent -o yaml  로 설정 확인
+<br>
+![HPA_0_yaml 설정](https://user-images.githubusercontent.com/12227092/97424249-cc918180-1953-11eb-9e4a-9a66c1968f3d.JPG)
 
 2. HPA 실행<br>
-![HPA_replica 실행됨](https://user-images.githubusercontent.com/73535272/97378959-fd979500-1906-11eb-9c2f-9bf10dd88a9b.JPG)
+시즈 사용한 부하 발생
+![HPA_2_siege 실행](https://user-images.githubusercontent.com/12227092/97423872-4412e100-1953-11eb-98b3-948b1f27bb84.JPG)
+<br>
 
-3. Readiness<br>
-![Readiness-seige 과정](https://user-images.githubusercontent.com/73535272/97389728-68a09600-191e-11eb-8649-8ca586c9b1ce.JPG)
-![Readiness-siege 결과](https://user-images.githubusercontent.com/73535272/97389730-69d1c300-191e-11eb-8359-410880e72151.JPG)
-
-
-
+![HPA_3_실행 후 상태](https://user-images.githubusercontent.com/12227092/97423925-5856de00-1953-11eb-931c-e3fbf6bb5b5e.JPG)
+<br>
+rent의 POD가 10개까지 확장되어 생성됨을 확인
