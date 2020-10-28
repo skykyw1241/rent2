@@ -171,4 +171,9 @@ application.yaml에 아래의 config Map 설정<br>
 ![ConfigMap_ application yaml](https://user-images.githubusercontent.com/12227092/97428874-f352b680-1959-11eb-8147-61d5bd1be8ee.JPG)
 
 java단에 해당 config Map 적용<br>
-![ConfigMap RentalController](https://user-images.githubusercontent.com/12227092/97428917-09607700-195a-11eb-9677-413c6e3d303e.JPG)
+![ConfigMap RentalController](https://user-images.githubusercontent.com/12227092/97437338-a75a3e80-1966-11eb-9101-1feb4ef4958d.JPG)
+
+운영환경에서 실행확인<br>
+![ConfigMap 실행 결과](https://user-images.githubusercontent.com/12227092/97437394-be009580-1966-11eb-9f8d-e5a07134a02e.JPG)
+
+
