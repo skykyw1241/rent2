@@ -142,7 +142,7 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 ![Liveness_ describe로 확인](https://user-images.githubusercontent.com/12227092/97439959-2dc44f80-196a-11eb-8d6b-799142c4521d.JPG)
 
 ### Readiness
-1. rent 서비스로 seige로 부하를 주어 Availablity를 확인
+1. rent 서비스로 seige로 부하를 주어 Availablity를 확인 (po, deploy에 설정된 autoscale 제거 후 실행함)
 #siege -c255 -t120S -r10 --content-type "application/json" 'http://rent:8080/rental POST {"bookId":"5", "qty":1}'<br>
 ![Readiness_설정전 seige결과](https://user-images.githubusercontent.com/12227092/97448509-112d1500-1974-11eb-9217-f51688ba6dab.JPG)
 
