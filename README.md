@@ -109,6 +109,12 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 4. Gateway 직접정보조회<br>
 ![Gateway_직접정보조회](https://user-images.githubusercontent.com/73535272/97379198-975f4200-1907-11eb-96f2-94b3a6e50938.JPG)
 
+### Hexagonal 적용
+1. h2와 hsqldb를 통한 다형성 적용<br>
+![헥사고날 적용](https://user-images.githubusercontent.com/12227092/97518887-82ec7980-19db-11eb-8c0c-1cba1e11db4a.JPG)
+
+2. My Page에 적용된 pom.xml<br>
+![polyglot_](https://user-images.githubusercontent.com/12227092/97518957-aadbdd00-19db-11eb-94cc-a6084e1c4a25.png)
 
 ## 운영
 ### CI/CD설정
