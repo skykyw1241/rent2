@@ -84,17 +84,17 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 ![req-res_2_처리 controller](https://user-images.githubusercontent.com/73535272/97381905-6a159280-190d-11eb-88b8-c2212245e8c4.JPG)
 
 ### 이벤트 드리븐 아키텍처 구현
-1. 이벤트 드리븐 - 비동기 호출<br>
-![이벤트 드리븐 -1_비동기호출](https://user-images.githubusercontent.com/73535272/97381919-713ca080-190d-11eb-93f5-e34197932af5.JPG)
+1. Book @PostPersist에서 비동기 이벤트 생성 <br>
+![비동기 Book](https://user-images.githubusercontent.com/12227092/97511051-752df880-19c9-11eb-9c9a-e3843334fbb0.JPG)
 
-2. 이벤트 드리븐 - class 선언<br>
-![이벤트 드리븐 -2_ 이벤트 class 선언](https://user-images.githubusercontent.com/73535272/97381924-76015480-190d-11eb-81b7-ccd32ab00015.JPG)
+2. Rental @PostPersist에서 비동기 이벤트 생성<br>
+![비동기호출 Rental](https://user-images.githubusercontent.com/12227092/97511059-7828e900-19c9-11eb-88e6-28a3d1eaa00f.JPG)
 
-3. 이벤트 드리븐 - publish<br>
-![이벤트 드리븐 -3_ publish](https://user-images.githubusercontent.com/73535272/97381928-7994db80-190d-11eb-8bf1-78622f1f4a1a.JPG)
+3. Delivery @PostPersist에서 비동기 이벤트 생성<br>
+![비동기 Delivery](https://user-images.githubusercontent.com/12227092/97511060-79f2ac80-19c9-11eb-91b9-9d771308308b.JPG)
 
-4. 이벤트 드리븐 - 수신<br>
-![이벤트 드리븐 -4_ 수신](https://user-images.githubusercontent.com/73535272/97381934-7ef22600-190d-11eb-849d-14da20a4516f.JPG)
+4. 각 Book, Rental, Delivery에서 @PostPersist 에서 생성된 이벤트 수신 <br>
+![비동기호출-viewer에 저장](https://user-images.githubusercontent.com/12227092/97510662-9215fc00-19c8-11eb-8826-cfc19ff6773a.JPG)
 
 ### API 게이트웨이
 1. Gateway 설정<br>
