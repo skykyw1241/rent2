@@ -98,20 +98,16 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 
 ### API 게이트웨이
 1. Gateway 설정<br>
-![Gateway_ 설정_yaml](https://user-images.githubusercontent.com/73535272/97379145-74349280-1907-11eb-9e07-78aeb5aa399d.JPG)
-<br>
+![gateway-설정](https://user-images.githubusercontent.com/12227092/97509615-20d54980-19c6-11eb-85fe-59a6a256368c.JPG)
 
 2. Gateway rental  설정<br>
 ![Gateway_rental생성](https://user-images.githubusercontent.com/73535272/97379165-7f87be00-1907-11eb-9f6f-9f4ab3f7cb7e.JPG)
-<br>
 
 3. Gateway 정보조회<br>
 ![Gateway_정보조회](https://user-images.githubusercontent.com/73535272/97379181-8adae980-1907-11eb-80b2-1595781751d0.JPG)
-<br>
 
 4. Gateway 직접정보조회<br>
 ![Gateway_직접정보조회](https://user-images.githubusercontent.com/73535272/97379198-975f4200-1907-11eb-96f2-94b3a6e50938.JPG)
-<br>
 
 
 ## 운영
