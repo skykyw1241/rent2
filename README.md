@@ -114,7 +114,7 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 ![헥사고날 적용](https://user-images.githubusercontent.com/12227092/97518887-82ec7980-19db-11eb-8c0c-1cba1e11db4a.JPG)
 
 2. My Page에 적용된 pom.xml<br>
-![polyglot_](https://user-images.githubusercontent.com/12227092/97518957-aadbdd00-19db-11eb-94cc-a6084e1c4a25.png)
+![핵사고날 적용 pom](https://user-images.githubusercontent.com/12227092/97519260-4c632e80-19dc-11eb-98b3-767b141c7510.JPG)
 
 ## 운영
 ### CI/CD설정
