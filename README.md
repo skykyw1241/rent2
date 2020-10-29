@@ -125,10 +125,10 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 ![CI_4_pod_deploy 생성](https://user-images.githubusercontent.com/73535272/97382403-abf30880-190e-11eb-9e01-169dfa630300.JPG)
 
 ### Liveness
-1. deploy.yaml 설정<br>
+1. deploy.yaml 설정 (yaml에 임의적으로 port를 8081로 없는 포트로 설정하여 강제 오류를 발생시킴)<br>
 ![Liveness_ deploy yaml](https://user-images.githubusercontent.com/12227092/97439664-ca3a2200-1969-11eb-9260-03676374e560.JPG)
 
-2. Liveness가 스케쥴 돌면서 재기동함을 확인<br>
+2. 강제 오류로 인하여 Liveness가 스스로 해당 이미지를 재기동함을 확인<br>
 ![Liveness_Restarts 확인](https://user-images.githubusercontent.com/12227092/97439856-0f5e5400-196a-11eb-848f-8f9b98575bd7.JPG)
 
 3. rental 서비스가 동작중임을 확인<br>
