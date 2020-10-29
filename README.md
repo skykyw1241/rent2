@@ -54,7 +54,7 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 
 
 ### Event Storming
-![이벤트스토밍 설계](https://user-images.githubusercontent.com/73535272/97375299-d12b4b00-18fd-11eb-9b0b-871b1e3588a2.JPG)
+![event_storming](https://user-images.githubusercontent.com/12227092/97519410-90eeca00-19dc-11eb-9e5b-d2eab6fdaed2.png)
  
 ### MSA 구조
 ![msa구조](https://user-images.githubusercontent.com/73535272/97383342-b7dfca00-1910-11eb-8ec4-f4e19bf5440c.JPG)
