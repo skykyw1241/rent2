@@ -63,18 +63,8 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 ## 구현
 ### DDD의 적용
 분석/설계 단계에서 도출된 MSA는 총 4개로 다음과 같음
-* 고객페이지(view)는 CQRS를 위한 서비스
-1. 책 상품 관리<br>
-![view_books](https://user-images.githubusercontent.com/73535272/97380457-6af8f500-190a-11eb-88df-3fbe4ef56860.jpg)
-![view_books_1](https://user-images.githubusercontent.com/73535272/97380459-6c2a2200-190a-11eb-9473-5330f69cceae.JPG)
-![view_books_2](https://user-images.githubusercontent.com/73535272/97380460-6cc2b880-190a-11eb-8f56-7c2f32a7b947.JPG)
-![view_books_3](https://user-images.githubusercontent.com/73535272/97380463-6d5b4f00-190a-11eb-9bdf-a36fc2b26106.JPG)
-2. 주문 관리<br>
-![view_rentals](https://user-images.githubusercontent.com/73535272/97380482-7b10d480-190a-11eb-8dea-dec980fe395b.jpg)
-3. 배송 관리<br>
-![view_deliveries](https://user-images.githubusercontent.com/73535272/97380496-849a3c80-190a-11eb-8dcc-459be87a874f.jpg)
-4. 고객 페이지<br>
-![view](https://user-images.githubusercontent.com/73535272/97380515-8e23a480-190a-11eb-8e9f-b694a42f4f94.jpg)
+* 고객페이지(view)는 CQRS를 위한 서비스<br>
+![event_storming](https://user-images.githubusercontent.com/12227092/97519410-90eeca00-19dc-11eb-9e5b-d2eab6fdaed2.png
 
 ### Request-Response 아키텍쳐 구현
 1. Req-Res 호출<br>
