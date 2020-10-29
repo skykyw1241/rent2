@@ -51,8 +51,6 @@
 ## 분석/설계
 AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 
-
-
 ### Event Storming
 ![event_storming](https://user-images.githubusercontent.com/12227092/97519410-90eeca00-19dc-11eb-9e5b-d2eab6fdaed2.png)
  
@@ -64,7 +62,7 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 ### DDD의 적용
 분석/설계 단계에서 도출된 MSA는 총 4개로 다음과 같음
 * 고객페이지(view)는 CQRS를 위한 서비스<br>
-![event_storming](https://user-images.githubusercontent.com/12227092/97519410-90eeca00-19dc-11eb-9e5b-d2eab6fdaed2.png
+![CQRS](https://user-images.githubusercontent.com/12227092/97526322-36f60080-19ec-11eb-8418-cbc4c3857d11.JPG)
 
 ### Request-Response 아키텍쳐 구현
 1. Req-Res 호출<br>
