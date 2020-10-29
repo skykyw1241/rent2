@@ -139,21 +139,16 @@ AS-IS 조직(Horizontally-Aligned) -> TO-BE 조직(Vertically-Aligned)
 
 ### Readiness
 1. rent 서비스로 seige로 부하를 주고, kubectl apply -f non-readiness.yaml 로 이미지 배포 (po, deploy에 설정된 autoscale 제거 후 실행함)<br>
-배포 시, 
 #siege -c255 -t120S -r10 --content-type "application/json" 'http://rent:8080/rental POST {"bookId":"5", "qty":1}'<br>
 ![readiness0 설정 전 배포 실해](https://user-images.githubusercontent.com/12227092/97517797-3dc74800-19d9-11eb-83a2-388312f31f08.JPG)
 
+약 성공률이 21%로 확인되어, 신규 이미지 배포 중 request가 넘어가지 못하는 것을 확인
 
-약 성공률이 90%로 확인함
-
-2. 올라간 rent 서비스에 Readiness 적용된 yaml 적용<br>
-![Readiness_yaml](https://user-images.githubusercontent.com/12227092/97463350-0037d000-1983-11eb-85d8-502a69992bc0.JPG)
-
-
-3. rent 서비스로 seige로 부하를 주어 Availablity를 확인
+2. rent 서비스로 seige로 부하를 주고, kubectl apply -f readiness.yaml 로 이미지 배포 (po, deploy에 설정된 autoscale 제거 후 실행함)<br>
 #siege -c255 -t120S -r10 --content-type "application/json" 'http://rent:8080/rental POST {"bookId":"5", "qty":1}'<br>
 ![Readiness_설정 후 seige결과](https://user-images.githubusercontent.com/12227092/97463074-b8b14400-1982-11eb-9682-edea8a0f895b.JPG)
 
+성공률이 100%로 확인되어, 신규 이미지 배포 중 Request가 모두 처리되는 것을 
 
 ### HPA 적용(Autoscale)
 1. HPA 설정
